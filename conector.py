@@ -1,3 +1,4 @@
+
 import mysql.connector
 
 con = mysql.connector.connect(
@@ -9,29 +10,9 @@ con = mysql.connector.connect(
 
 mycursor = con.cursor()
 
-sql = "INSERT INTO teste"
 
-# Create database
-
-def CriarBase():
-    mycursor.execute("CREATE DATABASE testconect")
-
-
-# isert tables
-
-def Criartabela():
-    mycursor.execute("CREATE TABLE  (nome TEXT, senha TEXT)")
-
-
-
-def Altertable():
-    mycursor.execute("ALTER TABLE clientes ADD Rua varchar(11) NULL;")
-    
-
-
-# inserir dados na tabela Paciente
-
-def InserirDados():
+def InserirTabelaPaciente():
+    print("\nEsta e uma tela para inseririr dados dos Pacientes")
     input_nome = input("Digite nome: ")
     input_endereco = input("Digite ser endereço: ")
     input_idade = input("Digite a idade do paciente: ")
@@ -51,9 +32,3 @@ def InserirDados():
     valores = (input_nome, input_endereco,input_idade,input_cpf,input_rg,input_sexo,input_cep,input_bairro,input_cidade,input_estado,input_telefone,input_altura,input_peso)
 
     mycursor.execute(comando_sql, valores)
-    con.commit()
-
-
-
-InserirDados()
-#   INSERT INTO teste.Paciente (nome,endereco,idade,cpf,rg,sexo,mae,cep,bairro,cidade,estado,telefone_fixo,celular,altura)
