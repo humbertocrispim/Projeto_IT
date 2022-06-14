@@ -9,6 +9,8 @@ conectbd = mysql.connector.connect(
 
 def InsertdadosPacientes():
 
+    print("\nBem vindos ao cadastro de pacientes: ")
+
     cursor = conectbd.cursor()
 
     input_nome = input("Digite nome: ")
@@ -32,4 +34,6 @@ def InsertdadosPacientes():
     cursor.execute(comando_sql, valores)
 
     conectbd.commit()
+
+    print(cursor.rowcount, "Paciente cadastrado com sucesso! .")
 
