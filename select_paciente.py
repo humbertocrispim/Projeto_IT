@@ -13,7 +13,7 @@ def SelectdadosPacientes():
     cursor = conectbd.cursor()
 
     #input_consulta = input("Coloque aqui o nome ou cpf da consulta")
-    comando_sql = "SELECT * FROM pacientes  WHERE nome '%hum%'"
+    comando_sql = "SELECT * FROM pacientes LIKE '%hum%'"
 
     cursor.execute(comando_sql)
 
