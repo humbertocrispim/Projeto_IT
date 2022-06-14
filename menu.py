@@ -1,6 +1,3 @@
-from conector import InserirTabelaPaciente
-
-
 
 opcao = int(input("Ola voce esta no sistema,  digite opção: "))
 
