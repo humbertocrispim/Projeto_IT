@@ -1,4 +1,3 @@
-from re import S
 import mysql.connector
 
 conectbd = mysql.connector.connect(
@@ -12,21 +11,21 @@ def SelectdadosPacientes():
 
     cursor = conectbd.cursor()
 
-    print("\nVoce pode consultar os dados do paciente digitando nome, CPF, o numero de telefone: ")
+    print("\nVoce pode consultar os dados do paciente digitando nome, cpf ou numero de telefone. ")
     
-    input_consulta = input("\nDigite aqui: ")
+    input_consulta = input("\nDigite a opção desejada: ")
     
     
     if input_consulta == "nome":
       input_nome_paciente = input("Agora digite o nome do paciente: ")
       comando_sql = f"SELECT * FROM pacientes WHERE {input_consulta} LIKE '%{input_nome_paciente}%'"
     
-    elif input_consulta == "CPF":
-      input_cpf_paciente = input("Agora digite o CPF do paciente: ")
+    elif input_consulta == "cpf":
+      input_cpf_paciente = input("Agora digite o cpf do paciente: ")
       comando_sql = f"SELECT * FROM pacientes WHERE {input_consulta} LIKE '%{input_cpf_paciente}%'"
     
     elif input_consulta == "telefone":
-      input_telefone_paciente = input("Agora digite o nome do paciente: ")
+      input_telefone_paciente = input("Agora digite o telefone do paciente: ")
       comando_sql = f"SELECT * FROM pacientes WHERE {input_consulta} LIKE '%{input_telefone_paciente}%'"
 
 
