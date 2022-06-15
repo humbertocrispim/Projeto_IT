@@ -27,10 +27,12 @@ def SelectdadosPacientes():
     elif input_consulta == "telefone":
       input_telefone_paciente = input("Agora digite o telefone do paciente: ")
       comando_sql = f"SELECT * FROM pacientes WHERE {input_consulta} LIKE '%{input_telefone_paciente}%'"
-
+    else:
+      print("Opção errada")
 
     cursor.execute(comando_sql)
 
     resultado = cursor.fetchall()
     print(resultado)
 
+#teste
